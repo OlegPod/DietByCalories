@@ -1,0 +1,16 @@
+White Rice Longgrain: carbs:332, fats:5.5, protein:27.2
+Oatmeal Instant Plain: carbs:279, fats:52.3, protein:44
+Buckwheat Groats Roasted Dry: carbs:284, fats:22.7, protein:39.5
+Chicken Breast: carbs:0.2, fats:11.2, protein:98.6
+Beef Shoulder Clod Steak: carbs:0.1, fats:94.9, protein:81.1
+Whole Egg: carbs:3.2, fats:89.5, protein:50.3
+Black Beans: carbs:254, fats:11.9, protein:74.9
+Tuna Skipjack: carbs:0.0, fats:9.1, protein:93.9
+Cauliflower: carbs:19.3, fats:0.8, protein:4.8
+Bananas: carbs:82.6, fats:2.8, protein:3.7
+Sweet Potato: carbs:81.2, fats:0.4, protein:4.4
+Grapefruit Pink And Red: carbs:38.2, fats:1.2, protein:2.6
+Apples Raw With Skin: carbs:49.7, fats:1.4, protein:0.9
+Green Peas: carbs:58.8, fats:3.3, protein:18.8
+Spinach: carbs:12.8, fats:3.3, protein:7.0
+Peanuts Dryroasted: carbs:87.2, fats:416, protein:82.2
