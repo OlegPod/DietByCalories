@@ -1,4 +1,6 @@
 package repositories;
 
-public class FatsRepository extends ContainerRepository {
+import model.RichInFatsProduct;
+
+public class FatsRepository extends ContainerRepository<RichInFatsProduct> {
 }

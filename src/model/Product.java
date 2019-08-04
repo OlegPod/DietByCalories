@@ -14,4 +14,13 @@ public class Product {
         this.protein = protein;
     }
 
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() +
+                " name='" + name + '\'' +
+                ", carbs=" + carbs +
+                ", fats=" + fats +
+                ", protein=" + protein +
+                '}';
+    }
 }
