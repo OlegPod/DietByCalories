@@ -1,8 +1,6 @@
 package model;
 
-import java.util.LinkedList;
-
-public class Product  extends LinkedList<Product> {
+public class Product {
 
     final String name;
     final float carbs;
