@@ -24,7 +24,7 @@ public class Day {
     }
 
     private LinkedList<Product> setOfProducts;
- //
+
     private HashSet<Product> firstMeal;
     private HashSet<Product> secondMeal;
     private HashSet<Product> thirdMeal;
