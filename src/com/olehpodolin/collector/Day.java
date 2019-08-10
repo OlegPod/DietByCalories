@@ -1,6 +1,6 @@
-package collector;
+package com.olehpodolin.collector;
 
-import model.Product;
+import com.olehpodolin.model.Product;
 
 import java.util.HashSet;
 import java.util.LinkedList;

@@ -1,4 +1,4 @@
-package repositories;
+package com.olehpodolin.repositories;
 
 import java.util.LinkedList;
 

@@ -1,13 +1,13 @@
-package service;
+package com.olehpodolin.service;
 
-import model.OtherProducts;
-import model.RichInCarbsProduct;
-import model.RichInFatsProduct;
-import model.RichInProteinProduct;
-import repositories.CarbsRepository;
-import repositories.FatsRepository;
-import repositories.OtherProductsRepository;
-import repositories.ProteinRepository;
+import com.olehpodolin.model.OtherProducts;
+import com.olehpodolin.model.RichInCarbsProduct;
+import com.olehpodolin.model.RichInFatsProduct;
+import com.olehpodolin.model.RichInProteinProduct;
+import com.olehpodolin.repositories.CarbsRepository;
+import com.olehpodolin.repositories.FatsRepository;
+import com.olehpodolin.repositories.OtherProductsRepository;
+import com.olehpodolin.repositories.ProteinRepository;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

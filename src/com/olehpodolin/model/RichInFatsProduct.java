@@ -1,4 +1,4 @@
-package model;
+package com.olehpodolin.model;
 
 public class RichInFatsProduct extends Product {
 

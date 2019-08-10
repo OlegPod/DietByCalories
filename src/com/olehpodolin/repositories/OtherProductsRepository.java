@@ -1,6 +1,6 @@
-package repositories;
+package com.olehpodolin.repositories;
 
-import model.OtherProducts;
+import com.olehpodolin.model.OtherProducts;
 
 public class OtherProductsRepository extends ContainerRepository<OtherProducts> {
 }

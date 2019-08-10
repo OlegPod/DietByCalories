@@ -1,8 +1,9 @@
-import repositories.CarbsRepository;
-import repositories.FatsRepository;
-import repositories.OtherProductsRepository;
-import repositories.ProteinRepository;
-import service.Sorter;
+import com.olehpodolin.collector.Day;
+import com.olehpodolin.repositories.CarbsRepository;
+import com.olehpodolin.repositories.FatsRepository;
+import com.olehpodolin.repositories.OtherProductsRepository;
+import com.olehpodolin.repositories.ProteinRepository;
+import com.olehpodolin.service.Sorter;
 
 public class DietByCalories {
 
@@ -21,6 +22,13 @@ public class DietByCalories {
         fatsRepository.forEach(product -> System.out.println(product.toString()));
         otherProductsRepository.forEach(product -> System.out.println(product.toString()));
         proteinRepository.forEach(product -> System.out.println(product.toString()));
+
+        Day day = new Day("Monday", 2000);
+
+        System.out.println(day.getCaloriesNeeded());
+        System.out.println("Carbs for the day " + day.getCarbsNeeded());
+        System.out.println("Fats for the day " + day.getFatsNeeded());
+        System.out.println("Protein for the day " + day.getProteinNeeded());
     }
 
 }
