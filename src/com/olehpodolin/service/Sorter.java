@@ -25,6 +25,7 @@ public class Sorter {
         this.fatsRepository = fatsRepository;
         this.otherProductsRepository = otherProductsRepository;
         this.proteinRepository = proteinRepository;
+        sort();
     }
 
     public void sort() {
@@ -58,14 +59,14 @@ public class Sorter {
 
                 if (count == 3) {
                     count = 0;
-                    if (carbsAmount > 80)
-                        carbsRepository.add(new RichInCarbsProduct(productName, carbsAmount, fatsAmount, proteinAmount));
-                    else if (fatsAmount > 80)
-                        fatsRepository.add(new RichInFatsProduct(productName, carbsAmount, fatsAmount, proteinAmount));
-                    else if (proteinAmount > 80)
-                        proteinRepository.add(new RichInProteinProduct(productName, carbsAmount, fatsAmount, proteinAmount));
-                    else
+                    if (carbsAmount < 60 && fatsAmount < carbsAmount && proteinAmount < carbsAmount)
                         otherProductsRepository.add(new OtherProducts(productName, carbsAmount, fatsAmount, proteinAmount));
+                    else if (carbsAmount > 60 && carbsAmount > fatsAmount && carbsAmount > proteinAmount)
+                        carbsRepository.add(new RichInCarbsProduct(productName, carbsAmount, fatsAmount, proteinAmount));
+                    else if (fatsAmount > 80 && fatsAmount > carbsAmount && fatsAmount > proteinAmount)
+                        fatsRepository.add(new RichInFatsProduct(productName, carbsAmount, fatsAmount, proteinAmount));
+                    else if (proteinAmount > 60 && proteinAmount > carbsAmount && proteinAmount > fatsAmount)
+                        proteinRepository.add(new RichInProteinProduct(productName, carbsAmount, fatsAmount, proteinAmount));
                 }
             }
         }
