@@ -1,4 +1,3 @@
-import collector.Day;
 import repositories.CarbsRepository;
 import repositories.FatsRepository;
 import repositories.OtherProductsRepository;
@@ -22,13 +21,6 @@ public class DietByCalories {
         fatsRepository.forEach(product -> System.out.println(product.toString()));
         otherProductsRepository.forEach(product -> System.out.println(product.toString()));
         proteinRepository.forEach(product -> System.out.println(product.toString()));
-
-        Day day = new Day("Monday", 2000);
-
-        System.out.println(day.getCaloriesNeeded());
-        System.out.println("Carbs for the day " + day.getCarbsNeeded());
-        System.out.println("Fats for the day " + day.getFatsNeeded());
-        System.out.println("Protein for the day " + day.getProteinNeeded());
     }
 
 }
