@@ -1,4 +1,4 @@
-package com.olehpodolin.service;
+package com.olehpodolin.services;
 
 import com.olehpodolin.model.OtherProducts;
 import com.olehpodolin.model.RichInCarbsProduct;

@@ -2,10 +2,11 @@ package com.olehpodolin.model;
 
 public class Product {
 
-    private final String name;
+    private String name;
     private float carbs;
     private float fats;
     private float protein;
+    private float calories;
     private int portionInGrams = 100;
 
     public Product(String name, float carbs, float fats, float protein) {
@@ -13,7 +14,10 @@ public class Product {
         this.carbs = carbs;
         this.fats = fats;
         this.protein = protein;
+        this.calories = carbs + fats + protein;
     }
+
+    public Product() {}
 
     public String getName() {
         return name;
@@ -61,6 +65,14 @@ public class Product {
 
     public void setProtein(float protein) {
         this.protein = protein;
+    }
+
+    public float getCalories() {
+        return calories;
+    }
+
+    public void setCalories(float calories) {
+        this.calories = calories;
     }
 
     @Override

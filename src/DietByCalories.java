@@ -1,12 +1,16 @@
-import com.olehpodolin.service.MealCalculator;
+import com.olehpodolin.controllers.CalculatorController;
+import com.olehpodolin.model.Product;
+
+import java.util.HashSet;
 
 public class DietByCalories {
 
     public static void main(String[] args) {
 
-        MealCalculator mealCalculator = new MealCalculator(120, 20, 50);
+        CalculatorController calculatorController = new CalculatorController();
 
-            System.out.println(mealCalculator.evaluateMeal());
+        HashSet<Product> productHashSet = new HashSet<>(calculatorController.fillWithProducts());
+
     }
 
 }

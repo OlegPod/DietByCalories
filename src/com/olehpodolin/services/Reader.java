@@ -1,4 +1,4 @@
-package com.olehpodolin.service;
+package com.olehpodolin.services;
 
 import java.io.*;
 import java.util.*;
