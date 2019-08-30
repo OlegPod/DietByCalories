@@ -20,23 +20,23 @@ public class Product {
     public Product() {}
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public float getCarbsInGrams() {
-        return carbs / 4;
+        return this.carbs / 4;
     }
 
     public float getFatsInGrams() {
-        return fats / 9;
+        return this.fats / 9;
     }
 
     public float getProteinInGrams() {
-        return protein / 4;
+        return this.protein / 4;
     }
 
     public int getPortionInGrams() {
-        return portionInGrams;
+        return this.portionInGrams;
     }
 
     public void setPortionInGrams(int portionInGrams) {
@@ -44,7 +44,7 @@ public class Product {
     }
 
     public float getCarbs() {
-        return carbs;
+        return this.carbs;
     }
 
     public void setCarbs(float carbs) {
@@ -52,7 +52,7 @@ public class Product {
     }
 
     public float getFats() {
-        return fats;
+        return this.fats;
     }
 
     public void setFats(float fats) {
@@ -60,7 +60,7 @@ public class Product {
     }
 
     public float getProtein() {
-        return protein;
+        return this.protein;
     }
 
     public void setProtein(float protein) {
@@ -68,7 +68,7 @@ public class Product {
     }
 
     public float getCalories() {
-        return calories;
+        return this.calories;
     }
 
     public void setCalories(float calories) {
@@ -79,9 +79,9 @@ public class Product {
     public String toString() {
         return this.getClass().getSimpleName() +
                 " name='" + name + '\'' +
-                ", carbs=" + getCarbsInGrams() +
-                ", fats=" + getFatsInGrams() +
-                ", protein=" + getProteinInGrams() +
+                ", carbs=" + getCarbs() +
+                ", fats=" + getFats() +
+                ", protein=" + getProtein() +
                 '}';
     }
 }

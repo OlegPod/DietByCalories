@@ -1,12 +1,16 @@
 package com.olehpodolin.services;
 
-import com.olehpodolin.model.Product;
+import com.olehpodolin.model.*;
 import com.olehpodolin.repositories.CarbsRepository;
 import com.olehpodolin.repositories.FatsRepository;
 import com.olehpodolin.repositories.OtherProductsRepository;
 import com.olehpodolin.repositories.ProteinRepository;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class MainCalculator {
 
@@ -24,9 +28,9 @@ public class MainCalculator {
 
     public MainCalculator(double overallCaloryLimit) {
         this.overallCaloryLimit = overallCaloryLimit;
-        this.caloriesForFats = overallCaloryLimit * 0.2 / 9;
-        this.caloriesForProteins = overallCaloryLimit * 0.3 / 4;
-        this.caloriesForCarb = overallCaloryLimit * 0.5 / 4;
+        this.caloriesForFats = overallCaloryLimit * 0.2;
+        this.caloriesForProteins = overallCaloryLimit * 0.3;
+        this.caloriesForCarb = overallCaloryLimit * 0.5;
     }
 
     Sorter sorter = new Sorter(carbsRepository, fatsRepository, otherProductsRepository, proteinRepository);
@@ -38,15 +42,23 @@ public class MainCalculator {
         switch (productType) {
             case "carbs":
                 returnProduct = carbsRepository.get(random.nextInt(carbsRepository.size()));
+                System.out.println(returnProduct);
+                calibrateLimits(returnProduct);
                 break;
             case "proteins":
                 returnProduct = proteinRepository.get(random.nextInt(proteinRepository.size()));
+                System.out.println(returnProduct);
+                calibrateLimits(returnProduct);
                 break;
             case "fats":
                 returnProduct = fatsRepository.get(random.nextInt(fatsRepository.size()));
+                System.out.println(returnProduct);
+                calibrateLimits(returnProduct);
                 break;
             case "other":
                 returnProduct = otherProductsRepository.get(random.nextInt(otherProductsRepository.size()));
+                System.out.println(returnProduct);
+                calibrateLimits(returnProduct);
                 break;
             default:
                 System.err.println("Wrong product type getCarbProduct()");
@@ -59,7 +71,8 @@ public class MainCalculator {
         caloriesForCarb -= product.getCarbs();
         caloriesForProteins -= product.getProtein();
         caloriesForFats -= product.getFats();
-        System.out.println("Calibrated Limits " + overallCaloryLimit);
+        System.out.println("Calibrated Limits " + overallCaloryLimit + " carbs " + caloriesForCarb + " fats " + caloriesForFats
+                                        + " proteins " + caloriesForProteins);
         remainingCaloriesToMatch();
     }
 
@@ -70,5 +83,45 @@ public class MainCalculator {
                 ", caloriesForFats=" + caloriesForFats +
                 ", caloriesForProteins=" + caloriesForProteins +
                 '}';
+    }
+
+    public Collection<? extends Product> straightenCarbsType(HashSet<Product> productHashSet) {
+
+        List<Product> carbsProducts = productHashSet.stream()
+                .filter(product -> product instanceof RichInCarbsProduct)
+                .collect(Collectors.toList());
+
+        System.out.println("filter " + carbsProducts);
+        return carbsProducts;
+    }
+
+    public Collection<? extends Product> straightenProteinType(HashSet<Product> productHashSet) {
+
+        List<Product> proteinProducts = productHashSet.stream()
+                .filter(product -> product instanceof RichInProteinProduct)
+                .collect(Collectors.toList());
+
+        System.out.println("filter " + proteinProducts);
+        return proteinProducts;
+    }
+
+    public Collection<? extends Product> straightenFatsType(HashSet<Product> productHashSet) {
+
+        List<Product> fatsProducts = productHashSet.stream()
+                .filter(product -> product instanceof RichInFatsProduct)
+                .collect(Collectors.toList());
+
+        System.out.println("filter " + fatsProducts);
+        return fatsProducts;
+    }
+
+    public Collection<? extends Product> straightenOtherType(HashSet<Product> productHashSet) {
+
+        List<Product> otherProducts = productHashSet.stream()
+                .filter(product -> product instanceof OtherProducts)
+                .collect(Collectors.toList());
+
+        System.out.println("filter " + otherProducts);
+        return otherProducts;
     }
 }
