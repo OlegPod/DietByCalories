@@ -19,12 +19,12 @@ public class MainCalculator {
     private double caloriesForFats;
     private double caloriesForProteins;
 
-    Random random = new Random();
+    private Random random = new Random();
 
-    CarbsRepository carbsRepository = new CarbsRepository();
-    FatsRepository fatsRepository = new FatsRepository();
-    OtherProductsRepository otherProductsRepository = new OtherProductsRepository();
-    ProteinRepository proteinRepository = new ProteinRepository();
+    private CarbsRepository carbsRepository = new CarbsRepository();
+    private FatsRepository fatsRepository = new FatsRepository();
+    private OtherProductsRepository otherProductsRepository = new OtherProductsRepository();
+    private ProteinRepository proteinRepository = new ProteinRepository();
 
     public MainCalculator(double overallCaloryLimit) {
         this.overallCaloryLimit = overallCaloryLimit;
@@ -33,7 +33,7 @@ public class MainCalculator {
         this.caloriesForCarb = overallCaloryLimit * 0.5;
     }
 
-    Sorter sorter = new Sorter(carbsRepository, fatsRepository, otherProductsRepository, proteinRepository);
+    private Sorter sorter = new Sorter(carbsRepository, fatsRepository, otherProductsRepository, proteinRepository);
 
     public Product addRandomProducts(String productType) {
 
@@ -71,8 +71,8 @@ public class MainCalculator {
         caloriesForCarb -= product.getCarbs();
         caloriesForProteins -= product.getProtein();
         caloriesForFats -= product.getFats();
-        System.out.println("Calibrated Limits " + overallCaloryLimit + " carbs " + caloriesForCarb + " fats " + caloriesForFats
-                                        + " proteins " + caloriesForProteins);
+        /*System.out.println("Calibrated Limits " + overallCaloryLimit + " carbs " + caloriesForCarb + " fats " + caloriesForFats
+                                        + " proteins " + caloriesForProteins);*/
         remainingCaloriesToMatch();
     }
 

@@ -1,6 +1,5 @@
 import com.olehpodolin.controllers.CalculatorController;
 import com.olehpodolin.model.Product;
-import com.olehpodolin.repositories.CarbsRepository;
 
 import java.util.HashSet;
 
@@ -14,7 +13,9 @@ public class DietByCalories {
 
         calculatorController.printRemainingCalories();
 
-        calculatorController.straighenMacronutrients(productHashSet);
+        calculatorController.straightenMacronutrients(productHashSet);
+
+        calculatorController.printRemainingCalories();
     }
 
 }

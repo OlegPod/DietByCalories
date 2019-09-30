@@ -32,7 +32,7 @@ public class CalculatorController {
         System.out.println(mainCalculator.remainingCaloriesToMatch());
     }
 
-    public HashSet<Product> straighenMacronutrients(HashSet<Product> productHashSet) {
+    public HashSet<Product> straightenMacronutrients(HashSet<Product> productHashSet) {
 
         HashSet<Product> returnSet = new HashSet<>();
 

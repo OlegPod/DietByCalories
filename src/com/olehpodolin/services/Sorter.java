@@ -37,7 +37,7 @@ public class Sorter {
         float proteinAmount = 0;
         int count = 0;
 
-        for (String line : Reader.read("src//Products.txt")) {
+        for (String line : Reader.read("resources//Products.txt")) {
             nameMatcher.reset(line);
             nutrientMatcher.reset(line);
             while (nameMatcher.find()) {
