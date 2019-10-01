@@ -1,21 +1,26 @@
 import com.olehpodolin.controllers.CalculatorController;
-import com.olehpodolin.model.Product;
-
-import java.util.HashSet;
+import com.olehpodolin.services.Calculator;
+import com.olehpodolin.services.LimitObject;
+import com.olehpodolin.services.Weigher;
 
 public class DietByCalories {
 
     public static void main(String[] args) {
 
-        CalculatorController calculatorController = new CalculatorController();
+        Weigher weigher = new Weigher();
 
-        HashSet<Product> productHashSet = new HashSet<>(calculatorController.fillWithProducts());
+        LimitObject limitObject = new LimitObject(2000);
 
-        calculatorController.printRemainingCalories();
+        Calculator calculator = new Calculator(limitObject);
 
-        calculatorController.straightenMacronutrients(productHashSet);
+        CalculatorController calculatorController = new CalculatorController(
+                weigher, calculator);
 
-        calculatorController.printRemainingCalories();
+        calculatorController.calibrateLimits(calculatorController.getProducts());
+
+        System.out.println(calculatorController.getProducts());
+
+        calculatorController.printRemainingLimits();
     }
 
 }

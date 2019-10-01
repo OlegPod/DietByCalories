@@ -32,9 +32,9 @@ public class Sorter {
         Matcher nameMatcher = Pattern.compile("([A-Z][a-z]+\\s*)+").matcher("");
         Matcher nutrientMatcher = Pattern.compile("\\d+\\.?\\d+").matcher("");
         String productName = null;
-        float carbsAmount = 0;
-        float fatsAmount = 0;
-        float proteinAmount = 0;
+        double carbsAmount = 0;
+        double fatsAmount = 0;
+        double proteinAmount = 0;
         int count = 0;
 
         for (String line : Reader.read("resources//Products.txt")) {
@@ -48,11 +48,11 @@ public class Sorter {
                 count++;
                 switch (count) {
                     case 1:
-                        carbsAmount = Float.parseFloat(nutrientMatcher.group());
+                        carbsAmount = Double.parseDouble(nutrientMatcher.group());
                     case 2:
-                        fatsAmount = Float.parseFloat(nutrientMatcher.group());
+                        fatsAmount = Double.parseDouble(nutrientMatcher.group());
                     case 3:
-                        proteinAmount = Float.parseFloat(nutrientMatcher.group());
+                        proteinAmount = Double.parseDouble(nutrientMatcher.group());
                     default:
                         break;
                 }

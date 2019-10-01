@@ -3,13 +3,13 @@ package com.olehpodolin.model;
 public class Product {
 
     private String name;
-    private float carbs;
-    private float fats;
-    private float protein;
-    private float calories;
-    private int portionInGrams = 100;
+    private double carbs;
+    private double fats;
+    private double protein;
+    private double calories;
+    private double portionInGrams = 100;
 
-    public Product(String name, float carbs, float fats, float protein) {
+    public Product(String name, double carbs, double fats, double protein) {
         this.name = name;
         this.carbs = carbs;
         this.fats = fats;
@@ -23,55 +23,55 @@ public class Product {
         return this.name;
     }
 
-    public float getCarbsInGrams() {
+    public double getCarbsInGrams() {
         return this.carbs / 4;
     }
 
-    public float getFatsInGrams() {
+    public double getFatsInGrams() {
         return this.fats / 9;
     }
 
-    public float getProteinInGrams() {
+    public double getProteinInGrams() {
         return this.protein / 4;
     }
 
-    public int getPortionInGrams() {
+    public double getPortionInGrams() {
         return this.portionInGrams;
     }
 
-    public void setPortionInGrams(int portionInGrams) {
+    public void setPortionInGrams(double portionInGrams) {
         this.portionInGrams = portionInGrams;
     }
 
-    public float getCarbs() {
+    public double getCarbs() {
         return this.carbs;
     }
 
-    public void setCarbs(float carbs) {
+    public void setCarbs(double carbs) {
         this.carbs = carbs;
     }
 
-    public float getFats() {
+    public double getFats() {
         return this.fats;
     }
 
-    public void setFats(float fats) {
+    public void setFats(double fats) {
         this.fats = fats;
     }
 
-    public float getProtein() {
+    public double getProtein() {
         return this.protein;
     }
 
-    public void setProtein(float protein) {
+    public void setProtein(double protein) {
         this.protein = protein;
     }
 
-    public float getCalories() {
+    public double getCalories() {
         return this.calories;
     }
 
-    public void setCalories(float calories) {
+    public void setCalories(double calories) {
         this.calories = calories;
     }
 
